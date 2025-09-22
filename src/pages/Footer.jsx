@@ -43,17 +43,17 @@ const Footer = () => {
           >
             Players
           </a>
+          <a
+            href="/gallery"
+            className="text-lg font-medium transition duration-300 hover:underline"
+            style={{ color: "#0A192F" }}
+          >
+           Gallery
+          </a>
         </nav>
 
         {/* Button */}
-        <div className="mt-4 md:mt-0">
-          <button
-            className="px-5 py-2 rounded-lg font-semibold text-white transition-transform transform hover:scale-105"
-            style={{ backgroundColor: "#FF9933" }}
-          >
-            Join Us
-          </button>
-        </div>
+         
       </div>
     </footer>
   )
