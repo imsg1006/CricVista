@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import React, { useRef } from 'react' 
 import { ExpandableCardDemo } from '../components/Players/playersInfo'
+import Footer from './Footer'
 
 
 const Players = () => {
@@ -33,7 +34,7 @@ const Players = () => {
         scrollTrigger: {
           trigger: imageDivRef.current,
           start: "top 1%",
-          end: "top -70%",
+          end: "top -110%",
           pin: true,
           pinSpacing: true,
           pinReparent: true,
@@ -61,8 +62,7 @@ const Players = () => {
           trigger: imageDivRef.current,
           start: "top 1%", // tweak for mobile
           end: "+=60%", // shorter scroll distance
-          pin: true,
-          markers:true,
+          pin: true, 
           pinType: "transform",
           pinSpacing: true,
           pinReparent: true,
@@ -114,12 +114,12 @@ const Players = () => {
   {/* Heading + text */}
   <div className="relative">
     <div className="lg:mt-[45vh] mt-[40vh]">
-      <h1 className="text-[14vw] text-center bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent uppercase leading-[15vw]">
+      <h1 className="text-[14vw] text-center font-[Playfair_Display] bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent uppercase leading-[15vw]">
         Champions <br /> in blue
       </h1>
     </div>
     <div className="lg:pl-[40%] lg:mt-20 mt-4 p-3">
-      <p className="lg:text-6xl text-xl leading-tight bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent p-2 m-2">
+      <p className="lg:text-6xl text-xl leading-tight font-[Playfair_Display] bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent p-2 m-2">
         Meet the cricketing legends who carried the pride of a billion hearts. Each player journey is a story of passion, resilience, and glory in the Indian jersey.
       </p>
     </div>
@@ -129,6 +129,9 @@ const Players = () => {
 <div className="section2 m-10 min-h-screen">
   <ExpandableCardDemo />
 </div>
+
+
+      <Footer/>
 
     </div>
   )

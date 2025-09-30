@@ -1,5 +1,7 @@
 "use client";
 
+import Footer from "@/pages/Footer";
+
 const images = [
   "https://i.pinimg.com/1200x/a5/b4/da/a5b4dab6245d2108e1b3d2edcf48e7d4.jpg",
   "https://i.pinimg.com/736x/94/e2/72/94e272579aa7a5925ebf8aa01afd9ef8.jpg",
@@ -21,8 +23,8 @@ const images = [
 
 const Skiper30Small = () => {
   return (
-    <main className="w-full bg-gradient-to-r from-[#00416A] to-[#E4E5E6] p-4">
-      <h2 className="text-3xl font-bold uppercase text-center mb-6 text-[#0A192F]">
+    <main className="w-full bg-gradient-to-r from-[#1fa793] via-[#00AFC1] to-[#425182] p-4">
+      <h2 className="text-3xl font-bold uppercase text-center mb-6 text-[#D1ECF1]">
         SnapShots
       </h2>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
@@ -39,6 +41,7 @@ const Skiper30Small = () => {
           </div>
         ))}
       </div>
+      <Footer/>
     </main>
   );
 };

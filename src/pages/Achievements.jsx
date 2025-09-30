@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/all'
 import AchievementCard from '../components/Achievements/AchievementCard'
 import Skiper30 from './Gallery'
+import Footer from './Footer'
 
 const Achievements = () => {
   const achievements = [{
@@ -19,13 +20,13 @@ const Achievements = () => {
   }, {
     image1: 'https://i.pinimg.com/736x/19/b1/d5/19b1d5e93a52213d5210e7b1d985160b.jpg',
     tag1:'T20 World Cup `24',
-    image2: 'https://i.pinimg.com/1200x/d4/3e/9d/d43e9d06093bd2a209eb7d60d4c22c91.jpg',
+    image2: 'https://i.pinimg.com/736x/f1/23/70/f123702e90cc3eaa7320140c8f2d0a87.jpg',
     tag2:'Champions trophy `25'
   },
 {
     image1: 'https://i.pinimg.com/736x/f2/af/db/f2afdb4cc8ebcde0221d0abe63492217.jpg',
     tag1:'ODI World Cup `83',
-    image2: '/2021bgt.jpeg',
+    image2: 'https://i.pinimg.com/736x/cf/33/72/cf33723618b76ede9ecb45e795176769.jpg',
     tag2:'BGT `21'
   }]
 
@@ -48,17 +49,17 @@ const Achievements = () => {
 
   return (
     <div className='lg:p-4  p-2'>
-      <div className=' pt-[25vh]'>
+      <div className=' pt-[35vh]'>
         <h2
-          className=" 
+          className="font-['Playfair_Display']
              text-4xl sm:text-5xl md:text-6xl lg:text-[7vw] xl:text-[9.5vw] 
-             uppercase text-center"
+             uppercase text-center text-[#FFFFFF]"
         >
           Achievements
         </h2>
         <p className=" 
-             text-xl mt-5 sm:text-xl md:text-xl lg:text-[1vw] xl:text-[1.5vw] 
-             uppercase text-center">From historic victories to unforgettable milestones, and triumphs that inspire generations.</p>
+             text-xl mt-5 sm:text-xl md:text-xl lg:text-[1vw] xl:text-[1.5vw] font-['Playfair_Display'] 
+             uppercase text-center text-[#E0E0E0]">From historic victories to unforgettable milestones, and triumphs that inspire generations.</p>
       </div>
       <div className='lg:mt-20 lol sm:flex sm:flex-wrap   sm:justify-center sm:items-center lg:gap-8 gap-4 mt-10'>
         {achievements.map(function (elem, idx) {
@@ -70,6 +71,8 @@ const Achievements = () => {
           </div>
         })}
       </div> 
+      
+      <Footer/>
     </div>
   )
 }

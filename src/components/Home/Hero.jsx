@@ -6,9 +6,8 @@ const Hero = () => {
     <div className="pt-5 text-center space-y-2">
       {/* First Line */}
       <div
-        className="flex justify-center items-center 
-                   bg-gradient-to-r from-orange-500 via-white to-green-500 
-                   bg-clip-text text-transparent uppercase 
+        className="flex justify-center font-['Playfair_Display'] items-center 
+                   text-[#FFFFFF] uppercase 
                    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
                    leading-tight sm:leading-snug md:leading-[1.1]"
       >
@@ -18,14 +17,13 @@ const Hero = () => {
       {/* Second Line */}
       <div
         className="flex justify-center items-center 
-                   bg-gradient-to-r from-orange-500 via-white to-green-500 
-                   bg-clip-text text-transparent uppercase 
+                    text-[#FFFFFF] uppercase font-['Playfair_Display']
                    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
                    leading-tight sm:leading-snug md:leading-[1.1]"
       >
         Th
         <div
-          className="mx-2 rounded-full overflow-hidden 
+          className="mx-2 font-['Playfair_Display'] rounded-full overflow-hidden 
                      h-10 w-20 sm:h-12 sm:w-24 md:h-16 md:w-32 lg:h-20 lg:w-40"
         >
           <Video />
@@ -35,9 +33,8 @@ const Hero = () => {
 
       {/* Third Line */}
       <div
-        className="flex justify-center items-center 
-                   bg-gradient-to-r from-orange-500 via-white to-green-500 
-                   bg-clip-text text-transparent uppercase 
+        className="flex justify-center items-center font-['Playfair_Display']
+                   text-[#FFFFFF] uppercase 
                    text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 
                    leading-tight sm:leading-snug md:leading-[1.1]"
       >

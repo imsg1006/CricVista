@@ -49,25 +49,11 @@ export function ExpandableCardDemo() {
           <div className="fixed top-[25%]   left-0 w-full h-full flex items-center justify-center z-[100]">
 
             {/* Close Button (Mobile) */}
-            <motion.button
-              key={`button-${active.id}-${id}`}
-              layout
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{
-                opacity: 0,
-                transition: { duration: 0.05 },
-              }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
-              onClick={() => setActive(null)}
-            >
-              <CloseIcon />
-            </motion.button>
-
+           
             <motion.div
               layoutId={`card-${active.id}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%] flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl "
             >
               {/* Image */}
               <motion.div layoutId={`image-${active.id}-${id}`}>
@@ -135,7 +121,7 @@ export function ExpandableCardDemo() {
             layoutId={`card-${card.id}-${id}`}
             key={card.id}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 flex  flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.id}-${id}`}>

@@ -5,13 +5,22 @@
 
 body { 
     overflow-x: hidden;
-    background: linear-gradient(to right, #00416A, #E4E5E6);
+    background: linear-gradient(135deg, #1fa793, #00AFC1, #425182);
 }
 
+.playfair-display-regular {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
- 
-
-
+.playfair-display-bold {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
 .moveX{
     animation-name: moveAnimation;
     animation-duration: 10s;

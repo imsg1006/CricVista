@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="flex-shrink-0">
         <Link to="/">
           <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Board_of_Control_for_Cricket_in_India_Logo_%282024%29.svg/792px-Board_of_Control_for_Cricket_in_India_Logo_%282024%29.svg.png?20240630054610"
+            src="/cric-logo.png"
             alt="logo"
             className="w-16 sm:w-20 md:w-28 lg:w-36"
           />
@@ -29,12 +29,12 @@ const Navbar = () => {
         onMouseLeave={() => {
           if (navGreenRef.current) navGreenRef.current.style.height = '0%'
         }}
-        className="relative bg-[#034f7f] h-10 sm:h-12 md:h-14 lg:h-16 w-12 sm:w-14 md:w-16 lg:w-[16vw] cursor-pointer rounded-md overflow-hidden"
+        className="relative bg-[#55a99c] h-10 sm:h-12 md:h-14 lg:h-16 w-12 sm:w-14 md:w-16 lg:w-[16vw] cursor-pointer rounded-md overflow-hidden"
       >
         {/* Green Hover Effect */}
         <div
           ref={navGreenRef}
-          className="bg-[#d6eaff] transition-all duration-300 absolute top-0 h-0 w-full"
+          className="bg-[#07474e] transition-all duration-300 absolute top-0 h-0 w-full"
         ></div>
 
         {/* Hamburger Lines */}

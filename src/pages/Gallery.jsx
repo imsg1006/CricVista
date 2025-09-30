@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Skiper30Large from "./../components/Gallery/skipper30Large";
 import Skiper30Small from "./../components/Gallery/skipper30Small";
+import Footer from "./Footer";
 
 const Skiper30 = () => {
   const [isSmall, setIsSmall] = useState(false);
@@ -19,6 +20,7 @@ const Skiper30 = () => {
   }, []);
 
   return isSmall ? <Skiper30Small /> : <Skiper30Large />;
+  
 };
 
 export default Skiper30;

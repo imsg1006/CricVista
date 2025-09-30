@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/pages/Footer";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
@@ -48,10 +49,10 @@ const Skiper30Large = () => {
   }, []);
 
   return (
-    <main className="w-full bg-gradient-to-r from-[#00416A] to-[#E4E5E6] text-black">
+    <main className="w-full bg-gradient-to-r from-[#1fa793] via-[#00AFC1] to-[#425182] text-black">
       {/* Heading */}
       <div className="flex h-screen items-center justify-center">
-        <h2 className="text-6xl font-bold uppercase">SnapShots</h2>
+        <h2 className="font-['Playfair_Display'] text-6xl text-[#FFFFFF] font-bold uppercase">SnapShots</h2>
       </div>
 
       {/* Scroll Gallery */}
@@ -65,7 +66,9 @@ const Skiper30Large = () => {
         <Column images={[images[9], images[10], images[11]]} y={y4} />
         <Column images={[images[12], images[13], images[14]]} y={y5} />
       </div>
+      <Footer/>
     </main>
+    
   );
 };
 

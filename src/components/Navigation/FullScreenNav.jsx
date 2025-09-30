@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useRef, useEffect } from 'react'
 import { NavbarContext } from '../../context/NavContext'
 import { Link } from 'react-router-dom'
 
@@ -8,6 +8,20 @@ const FullScreenNav = () => {
   const fullNavLinksRef = useRef(null)
   const fullScreenRef = useRef(null)
   const [navOpen, setNavOpen] = useContext(NavbarContext)
+
+  // Prevent body scroll when nav is open
+  useEffect(() => {
+    if (navOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [navOpen])
 
   function gsapAnimation() {
     const tl = gsap.timeline()
@@ -49,14 +63,14 @@ const FullScreenNav = () => {
     <div
       ref={fullScreenRef}
       id="fullscreennav"
-      className="fullscreennav hidden text-white overflow-hidden h-full w-full z-50 fixed top-0 left-0"
+      className="fullscreennav hidden font-['Playfair_Display'] text-white overflow-y-auto h-full w-full z-50 fixed top-0 left-0"
     >
       {/* Black background stairing effect */}
       <div className="h-screen w-full fixed flex">
         {Array(5)
           .fill()
           .map((_, i) => (
-            <div key={i} className="stairing h-full w-1/5 bg-[#cece88]"></div>
+            <div key={i} className="stairing h-full w-1/5 bg-[#85e9e4]"></div>
           ))}
       </div>
 
@@ -67,7 +81,7 @@ const FullScreenNav = () => {
           {/* Logo */}
           <div className="w-20 sm:w-28 lg:w-36">
             <Link to="/">
-              <img onClick={() => setNavOpen(false)} src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Board_of_Control_for_Cricket_in_India_Logo_%282024%29.svg/792px-Board_of_Control_for_Cricket_in_India_Logo_%282024%29.svg.png?20240630054610" alt="logo" className="w-full h-auto" />
+              <img onClick={() => setNavOpen(false)} src="/cric-logo.png" alt="logo" className="w-full h-auto" />
             </Link>
           </div>
 
@@ -76,8 +90,8 @@ const FullScreenNav = () => {
             onClick={() => setNavOpen(false)}
             className="h-16 w-16 sm:h-20 sm:w-20 lg:h-32 lg:w-32 relative cursor-pointer"
           >
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] rotate-45 bg-red-500"></div>
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] -rotate-45 bg-red-500"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] rotate-45 bg-[#f80c0c]"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] -rotate-45 bg-[#f80c0c]"></div>
           </div>
         </div>
 
@@ -86,12 +100,12 @@ const FullScreenNav = () => {
           {/* Achievements */}
           <Link to='/achievements'>
            <div onClick={() => setNavOpen(false)} className="link origin-top relative border-t border-white">
-            <h1 className="font-[font2] text-3xl sm:text-4xl md:text-6xl lg:text-[8vw] text-center leading-tight sm:leading-snug md:leading-[1.1] pt-3 lg:pt-10 uppercase">
+            <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-6xl lg:text-[8vw] text-center leading-tight sm:leading-snug md:leading-[1.1] pt-3 lg:pt-10 uppercase">
               Achievements
             </h1>
             <div className="moveLink absolute text-black flex flex-col sm:flex-row top-0 bg-[#f8820c] overflow-x-auto">
               <div className="moveX flex items-center gap-2 sm:gap-4 px-2">
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   ODI World Cup
                 </h2>
                 <img
@@ -99,7 +113,7 @@ const FullScreenNav = () => {
                   src="https://im.indiatimes.in/content/2023/Oct/cricket-world-cup-Trophy_652519acb00d0.jpeg"
                   alt=""
                 />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   Champions Trophy
                 </h2>
                 <img
@@ -107,7 +121,7 @@ const FullScreenNav = () => {
                   src="https://i.pinimg.com/736x/74/ce/74/74ce74d5afac09cdfa3c8b5bcadccdb1.jpg"
                   alt=""
                 />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   T20 World Cup
                 </h2>
                 <img
@@ -115,7 +129,7 @@ const FullScreenNav = () => {
                   src="https://i.pinimg.com/1200x/0f/65/11/0f65113fd8943984b275696e8cdb9bcb.jpg"
                   alt=""
                 />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   WTC
                 </h2>
                 <img
@@ -131,32 +145,32 @@ const FullScreenNav = () => {
           {/* Players */}
           <Link to='/players'>
            <div onClick={() => setNavOpen(false)} className="link origin-top relative border-t border-white">
-            <h1 className="font-[font2] text-3xl sm:text-4xl md:text-6xl lg:text-[8vw] text-center leading-tight sm:leading-snug md:leading-[1.1] pt-3 lg:pt-10 uppercase">
+            <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-6xl lg:text-[8vw] text-center leading-tight sm:leading-snug md:leading-[1.1] pt-3 lg:pt-10 uppercase">
               Players
             </h1>
             <div className="moveLink absolute text-black flex flex-col sm:flex-row top-0 bg-[#b8ddf4] overflow-x-auto">
               <div className="moveX flex items-center gap-2 sm:gap-4 px-2">
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   C.Pujara
                 </h2>
                 <img className="h-12 w-28 sm:h-16 sm:w-40 md:h-24 md:w-64 lg:h-36 lg:w-96  rounded-full  object-cover shrink-0" src="https://i.pinimg.com/736x/37/76/ba/3776ba7cece868a3615130cfd16614c1.jpg" alt="vk" />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   M.Shami
                 </h2>
                 <img className="h-16 w-28 sm:h-16 sm:w-40 md:h-24 md:w-64 lg:h-36 lg:w-96 rounded-full object-cover shrink-0" src="https://i.pinimg.com/736x/dd/b8/f6/ddb8f6cab9af0b17e6d586e69f2a4a12.jpg" alt="dhoni" />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                  Y.Chahal
                 </h2>
                 <img className="h-12 w-28 sm:h-16 sm:w-40 md:h-24 md:w-64 lg:h-36 lg:w-96 rounded-full object-cover shrink-0" src="https://i.pinimg.com/736x/4b/0e/04/4b0e04287d0061546bc1aaf1686a1f0b.jpg" alt="dhoni" />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   R.Ashwin
                 </h2>
                 <img className="h-12  w-28   sm:h-16 sm:w-40 md:h-24 md:w-64 lg:h-36 lg:w-96 rounded-full object-cover shrink-0" src="https://i.pinimg.com/736x/9c/ac/c1/9cacc11acc7b60e144d89714fc5e95ac.jpg" alt="dhoni" />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   S.Dhawan
                 </h2>
                 <img className="h-12  w-28   sm:h-16 sm:w-40 md:h-24 md:w-64 lg:h-36 lg:w-96 rounded-full object-cover shrink-0" src="https://i.pinimg.com/736x/62/24/1d/62241d3435b8eed1387cfd40c545d202.jpg" alt="dhoni" />
-                <h2 className="whitespace-nowrap font-[font2] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
+                <h2 className="whitespace-nowrap font-['Playfair_Display'] text-xl sm:text-3xl md:text-5xl lg:text-[8vw] uppercase">
                   A.Rahane
                 </h2>
                 <img className="h-12  w-28   sm:h-16 sm:w-40 md:h-24 md:w-64 lg:h-36 lg:w-96 rounded-full object-cover shrink-0" src="https://i.pinimg.com/1200x/07/a9/57/07a957569c3c8bf979053301a826eff7.jpg" alt="dhoni" />
@@ -169,7 +183,7 @@ const FullScreenNav = () => {
           {/* Contact */}
           <Link to='/gallery'> 
           <div onClick={() => setNavOpen(false)} className="link origin-top relative border-t mb-6 border-white">
-            <h1 className="font-[font2] text-3xl sm:text-4xl md:text-6xl lg:text-[8vw] text-center leading-tight sm:leading-snug md:leading-[1.1] pt-3 lg:pt-10 uppercase">
+            <h1 className="font-['Playfair_Display'] text-3xl sm:text-4xl md:text-6xl lg:text-[8vw] text-center leading-tight sm:leading-snug md:leading-[1.1] pt-3 lg:pt-10 uppercase">
               Gallery
             </h1>
             <div className="moveLink absolute text-black flex flex-col sm:flex-row top-0 bg-[#0eee6b] overflow-x-auto">

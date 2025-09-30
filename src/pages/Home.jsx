@@ -1,7 +1,7 @@
 import React from 'react'
 import Video from '../components/Home/Video'
 import Hero from "../components/Home/Hero"
-import BottomText from "../components/Home/BottomText"
+import BottomText from "../components/Home/BottomText" 
 
 const Home = () => {
   return (
@@ -22,8 +22,7 @@ const Home = () => {
         <div className="pb-6 sm:pb-10 md:pb-12">
           <BottomText />
         </div>
-      </div>
-      
+      </div> 
     </div>
   )
 }
