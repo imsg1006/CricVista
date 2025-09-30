@@ -30,7 +30,7 @@ const Footer = () => {
             Home
           </a>
           <a
-            href="/achievements"
+            href="/Achievements"
             className="text-lg text-[#D1ECF1] hover:text-white font-medium transition duration-300 hover:underline"
              
           >
